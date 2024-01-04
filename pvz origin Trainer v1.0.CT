@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable GamesFuqr69TableVersion="37">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>324</ID>
+      <Description>"Pvz Goty Origin Trainer"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Activated="1"/>
+      <Color>008000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+luacall(function cycleFullCompact(sender,force); local state = not(compactmenuitem.Caption == 'Compact View Mode'); if force~=nil then state = not force end; compactmenuitem.Caption = state and 'Compact View Mode' or 'Full view Mode'; getMainForm().Splitter1.Visible = state; getMainForm().Panel4.Visible = state; getMainForm().Panel5.Visible = state; end; function addCompactMenu(); if compactmenualreadyexists then return end; local parent = getMainForm().Menu.Items; compactmenuitem = createMenuItem(parent); parent.add(compactmenuitem); compactmenuitem.Caption = 'Compact View Mode'; compactmenuitem.OnClick = cycleFullCompact; compactmenualreadyexists = 'yes'; end; addCompactMenu(); cycleFullCompact(nil,true))
+
+[DISABLE]
+
+luacall(cycleFullCompact(nil,false))
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1337099609</ID>
+          <Description>"F3 = multi plant"</Description>
+          <Options moAlwaysHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <Color>000080</Color>
+          <GroupHeader>1</GroupHeader>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>114</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1337099577</ID>
+              <Description>"Multi Plants Part 1"</Description>
+              <LastState Activated="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//jne PlantsVsZombies.exe+13590
+
+exit:
+jmp returnhere
+
+"PlantsVsZombies.exe"+134A7:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"PlantsVsZombies.exe"+134A7:
+jne PlantsVsZombies.exe+13590
+//Alt: db 0F 85 E3 00 00 00
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337099578</ID>
+              <Description>"Multi Plants Part 2"</Description>
+              <LastState Activated="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+cmp eax,eax
+jne PlantsVsZombies.exe+13586
+
+exit:
+jmp returnhere
+
+"PlantsVsZombies.exe"+134C7:
+jmp newmem
+nop
+nop
+nop
+returnhere:
+
+
+
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"PlantsVsZombies.exe"+134C7:
+test eax,eax
+jne PlantsVsZombies.exe+13586
+//Alt: db 85 C0 0F 85 B7 00 00 00
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1337099608</ID>
+          <Description>"F2 = zombies die instantly"</Description>
+          <Options moAlwaysHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <Color>FF00FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>113</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1337099546</ID>
+              <Description>"Reduce Zombie's Health"</Description>
+              <LastState Activated="1"/>
+              <Color>00FF00</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+0054160B:
+xor edi,edi
+nop
+nop
+nop
+nop
+
+0054164F:
+sub edi,edi
+mov [esi+000000DC],edi
+mov [esp+18],edx
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+
+005419AC:
+xor ecx,ecx
+nop
+nop
+nop
+nop
+
+00541CC9:
+xor ebp,ebp
+nop
+nop
+nop
+nop
+
+[DISABLE]
+0054160B:
+mov edi,[esi+000000DC]
+
+0054164F:
+sub edx,eax
+sub [esi+000000DC],eax
+mov edi,[esi+000000DC]
+mov [esp+18],edx
+jne 0054167B
+
+005419AC:
+mov ecx,[ebp+000000D0]
+
+00541CC9:
+mov ebp,[edi+000000C8]
+
+</AssemblerScript>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Toggle Activation</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>114</Key>
+                  </Keys>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"F1 = Cheats"</Description>
+          <Options moAlwaysHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <Color>800080</Color>
+          <GroupHeader>1</GroupHeader>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>112</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1337099607</ID>
+              <Description>"no recharge  Important"</Description>
+              <LastState Activated="1"/>
+              <Color>0000FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+nop
+nop
+nop
+originalcode:
+
+
+exit:
+jmp returnhere
+
+"PlantsVsZombies.exe"+91E4F:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"PlantsVsZombies.exe"+91E4F:
+mov eax,[edi+24]
+cmp eax,[edi+28]
+//Alt: db 8B 47 24 3B 47 28
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337099585</ID>
+              <Description>"Planting on anyware"</Description>
+              <LastState Activated="1"/>
+              <Color>00FF00</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+jmp PlantsVsZombies.exe+13115
+
+exit:
+jmp returnhere
+
+"PlantsVsZombies.exe"+127EF:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"PlantsVsZombies.exe"+127EF:
+je PlantsVsZombies.exe+13115
+//Alt: db 0F 84 20 09 00 00
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337099602</ID>
+              <Description>"Upgrade Plants Hack"</Description>
+              <LastState Activated="1"/>
+              <Color>00FF00</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+test al,al
+jmp PlantsVsZombies.exe+9394E
+
+exit:
+jmp returnhere
+
+"PlantsVsZombies.exe"+935F1:
+jmp newmem
+nop
+nop
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"PlantsVsZombies.exe"+935F1:
+test al,al
+jne PlantsVsZombies.exe+9394E
+//Alt: db 84 C0 0F 85 55 03 00 00
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337099599</ID>
+              <Description>"Sun Hack"</Description>
+              <LastState Activated="1"/>
+              <Color>00FF00</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [edx+00005578],00002706
+add eax,[edx+00005578]
+
+exit:
+jmp returnhere
+
+"PlantsVsZombies.exe"+1E885:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"PlantsVsZombies.exe"+1E885:
+add eax,[edx+00005578]
+//Alt: db 03 82 78 55 00 00
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1337099611</ID>
+          <Description>"HairyMeerkatYT"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>00FFFF</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
